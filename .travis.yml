@@ -69,11 +69,15 @@
 language: python
 python:
   - "2.7"
+dist: trusty
+sudo: required
+jdk:
+  - oraclejdk8
 
-sudo: false
 cache:
   directories:
     - "~/.platformio"
+    - '$HOME/.sonar/cache'
 
 install:
   - pip install -U platformio
@@ -81,3 +85,12 @@ install:
 
 script:
   - platformio run
+
+addons:
+  sonarcloud:
+    organization: "oxydation-github" # the key of the org you chose at step #3
+    token:
+      secure: "1ed2602e7cf137a7624be7db24d721da75870bb6" # encrypted value of your token
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
