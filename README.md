@@ -6,10 +6,10 @@
 
 Water plants based on various smart decisions - time, soil humidity, forecast and more.
 
-##Current Status
+## Current Status
 Planning
 
-##Features
+## Features
 
-##System Architecture
+## System Architecture
 ![](images/Overview.png)
