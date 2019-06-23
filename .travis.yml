@@ -84,8 +84,8 @@ install:
   - platformio update  
   - platformio lib install 1
 
-script:
-  - platformio run
+#script:
+#  - platformio run
 
 addons:
   sonarcloud:
@@ -94,5 +94,5 @@ addons:
       secure: "1ed2602e7cf137a7624be7db24d721da75870bb6" # encrypted value of your token
 script:
   # other script steps might be done before running the actual analysis
-  - build-wrapper-linux-x86-64 --out-dir bw_output make clean all
+  - build-wrapper-linux-x86-64 --out-dir bw_output platformio run
   - sonar-scanner
